@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Bustling Fungus",
+        "rarity":"Common",
+        "category":"Healing",
+        "image":"images/common/Bustling_Fungus.png",
+        "requires_unlock":false,
+        "has_two_stats":true,
+        "stats":[
+            {
+                "stat":"Health per second",
+                "base":"4.5",
+                "unit":"%",
+                "stack_type":"Linear",
+                "stack_rate":"2.25"
+            },
+            {
+                "stat":"Radius",
+                "base":"3",
+                "unit":"m",
+                "stack_type":"Linear",
+                "stack_rate":"3"
+            }
+
+        ]
+    },
+    {
+        "name":"Old Guillotine",
+        "rarity":"Uncommon",
+        "category":"Damage",
+        "image":"images/uncommon/Old_Guillotine.png",
+        "requires_unlock":true,
+        "has_two_stats":false,
+        "stats":[
+            {
+                "stat":"Damage threshold",
+                "base":"13",
+                "unit":"%",
+                "stack_type":"Hyperbolic",
+                "stack_rate":"13"
+            }
+        ]
+    }
+]

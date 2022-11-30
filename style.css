@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Bombadier;
+    src: url('BOMBARD_.otf');
+}
+body{
+    background-color: #777;
+    font-family: Bombadier,sans-serif;
+}
+header{
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    margin: 0%;
+}
+footer{
+    position: absolute;
+    text-align: center;
+    bottom: 0px;
+    padding: 0px;
+}
+td{
+    padding: 5px;
+}
+button{
+    padding: 20px;
+    margin: 10px;
+}
+
+#big{
+    height: 50vh;
+    font-size: 20px;
+    padding: 50px;
+}
+#small{
+    height: 25vh;
+}
+#grad{
+    width: auto;
+    height: auto;
+    float: right;
+    padding: 50px;
+}
+#centerme{
+    text-align: center;
+    margin: auto;
+}
