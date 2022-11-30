@@ -1,9 +1,12 @@
 var position = 1;
 //var itemTotal = 0;
 //var dataRequest; 
-
-function sendRequest(i){
-    position+=i;
+function page(i){
+    requestItem(parseInt(i)+parseInt(position));
+}
+function requestItem(i){
+    //position=i;
+    console.log(i);
     dataRequest = new  XMLHttpRequest();
     if(!dataRequest){
         alert('Error fetching data. Try again or try a different browser.');
@@ -34,10 +37,15 @@ function sendRequest(i){
         alert('Caught Exception: ' + e.description);
       }
     };
+    
     dataRequest.open('POST','php/getItem.php');
     dataRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-    dataRequest.send('position='+position);
+    dataRequest.send('position='+i);
+    
+    
+    
 }
+
 
 
 
@@ -112,32 +120,6 @@ function writeToPage(response){
         statFields2[4].value = '';
         
     }
-    
-    
-    
-    /*
-    dataSection = document.querySelector('#big');
-    sectionInfo = response.name
-    sectionInfo+= '<ul>'
-    sectionInfo+= '<li>' + 'Rarity: ' + response.rarity +'</li>'
-    sectionInfo+= '<li>' + 'Category: '+ response.category +'</li>'
-    sectionInfo+= '<li>' + 'Requires unlock? '+ response.requires_unlock +'</li>'
-    
-    for(let i in response.base){
-        x = response.base[i];
-        y = response.stacking[i];
-        sectionInfo+= '<li>';
-        sectionInfo+= 'Base Stat: '+ x.value + x.unit +' '+x.type + '<br>';
-        sectionInfo+= 'Stack rate ' + y.value + y.unit +' '+y.type;
-        
-        sectionInfo+= '</li>';
-
-
-    }
-    
-    sectionInfo+= '</ul>'
-    //dataSection.innerHTML = sectionInfo;
-*/
     setColor(response.rarity);
     
 }
@@ -162,4 +144,12 @@ function setColor(str){
     }
 }
 
-sendRequest(0);
+let params = new URLSearchParams(document.location.search);
+console.log(Number.isNaN(parseInt(params.get('pos'))));
+
+if(Number.isNaN(parseInt(params.get('pos')))){
+    requestItem(position);
+    
+}else{
+    requestItem(params.get('pos'));
+}
