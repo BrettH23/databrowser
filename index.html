@@ -19,7 +19,8 @@
             
         </header>
         
-        <button onclick="swapEdit()"> edit</button>
+        <button id="editButton" onclick="swapEdit()"> Editor</button>
+        <button id="deleteButton" onclick="deleteItem()" hidden> Delete</button>
         
         <iframe name="dummyframe" id="dummyframe" hidden></iframe>
         
@@ -68,6 +69,8 @@
                         </p>
                     </li>
                 </ul>
+                <input type="hidden" id="position" name="position" value="1">
+                <input type="hidden" id="mode" name="mode" value="edit">
                 <input type="submit">
             </section>
         </form>

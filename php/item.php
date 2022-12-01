@@ -53,31 +53,31 @@ class Item implements JsonSerializable{
     public function getStat($x){
         return $this->stat[$x];
     }
-    public function setStat($x,$n){
+    public function setStat($n,$x){
         $this->stat[$x] = $n;
     }
     public function getBase($x){
         return $this->base[$x];
     }
-    public function setBase($x,$n){
+    public function setBase($n,$x){
         $this->base[$x] = $n;
     }
     public function getUnit($x){
         return $this->unit[$x];
     }
-    public function setUnit($x,$n){
+    public function setUnit($n,$x){
         $this->unit[$x] = $n;
     }
     public function getStackType($x){
         return $this->stack_type[$x];
     }
-    public function setStackType($x,$n){
+    public function setStackType($n,$x){
         $this->stack_type[$x] = $n;
     }
     public function getStackRate($x){
         return $this->stack_rate[$x];
     }
-    public function setStackRate($x,$n){
+    public function setStackRate($n,$x){
         $this->stack_rate[$x] = $n;
     }
     

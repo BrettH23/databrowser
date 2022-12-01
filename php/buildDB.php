@@ -47,17 +47,15 @@ has_two_stats TINYINT(1) NOT NULL,
 
 stat1 VARCHAR(30) NOT NULL,
 base1 FLOAT(10) NOT NULL,
-unit1 VARCHAR(1) NOT NULL,
+unit1 VARCHAR(10) NOT NULL,
 stack_type1 VARCHAR(20) NOT NULL,
 stack_rate1 FLOAT(10) NOT NULL,
 
 stat2 VARCHAR(30) NOT NULL,
 base2 FLOAT(10) NOT NULL,
-unit2 VARCHAR(1) NOT NULL,
+unit2 VARCHAR(10) NOT NULL,
 stack_type2 VARCHAR(20) NOT NULL,
-stack_rate2 FLOAT(10) NOT NULL,
-
-reg_date TIMESTAMP
+stack_rate2 FLOAT(10) NOT NULL
 )";
 
 
@@ -67,6 +65,9 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating table: " . $conn->error ."<br>";
 }
 
+$conn->close();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 $dataJson = file_get_contents('../data/data2.json');
 

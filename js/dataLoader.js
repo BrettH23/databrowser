@@ -6,7 +6,7 @@ function page(i){
 }
 function requestItem(i){
     //position=i;
-    console.log(i);
+    //console.log(i);
     dataRequest = new  XMLHttpRequest();
     if(!dataRequest){
         alert('Error fetching data. Try again or try a different browser.');
@@ -120,6 +120,7 @@ function writeToPage(response){
         statFields2[4].value = '';
         
     }
+    document.querySelector('#position').value=position;
     setColor(response.rarity);
     
 }
@@ -144,12 +145,29 @@ function setColor(str){
     }
 }
 
-let params = new URLSearchParams(document.location.search);
-console.log(Number.isNaN(parseInt(params.get('pos'))));
 
-if(Number.isNaN(parseInt(params.get('pos')))){
-    requestItem(position);
-    
-}else{
-    requestItem(params.get('pos'));
+window.onload=function(){
+    let params = new URLSearchParams(document.location.search);
+    //console.log(Number.isNaN(parseInt(params.get('pos'))));
+    let modeInput = document.querySelector('#mode');
+    if(params.get('new')!== 'true'){
+        if(Number.isNaN(parseInt(params.get('pos')))){
+            requestItem(position);
+            
+        }else{
+            requestItem(params.get('pos'));
+        }
+        modeInput.value='edit';
+    }else{
+        let z = document.querySelector('#editButton');
+        console.log(z)
+        z.click();
+        z.setAttribute('hidden','true');
+        modeInput.value='new';
+    }
+
 }
+
+
+
+
