@@ -5,8 +5,8 @@ function swapEdit(){
     const inputItems = document.querySelectorAll("[id$=input]");
     x = textItems.length;
     y = inputItems.length;
-    console.log(inputItems);
-    console.log(textItems);
+    //console.log(inputItems);
+    //console.log(textItems);
     let stat2 = document.getElementById('2statChecker');
     if(editMode){
         for(let i = 0;i<x;i++){//using let i in list causes loop to overshoot
@@ -16,7 +16,9 @@ function swapEdit(){
             inputItems[i].setAttribute('hidden','true');
         }
         stat2.setAttribute('hidden','true');
-        document.querySelector('#deleteButton').setAttribute('hidden','true');
+        document.querySelector('#deleteButton').setAttribute('hidden',true);
+        document.querySelector('#submitQuery').setAttribute('hidden',true);
+        
     }else{
         for(let i = 0;i<x;i++){
             textItems[i].setAttribute('hidden','true');
@@ -26,6 +28,8 @@ function swapEdit(){
         }
         stat2.removeAttribute('hidden');
         document.querySelector('#deleteButton').removeAttribute('hidden');
+        document.querySelector('#submitQuery').removeAttribute('hidden');
+        
     }
     editMode = !editMode;
 }
@@ -35,7 +39,7 @@ function deleteItem(){
     position = 0;
     position = Number(document.querySelector('#position').value);
 
-    console.log(position);
+    //console.log(position);
     if(!dataRequest){
         alert('Error fetching data. Try again or try a different browser.');
         return false;
@@ -51,7 +55,7 @@ function deleteItem(){
                 //alert(httpRequest.responseText); // If you have a bug, use an alert of what is given back from the server (for textual content)
                 // if you return something that cannot be converted to an object, then debug the PHP side !
                 //let response = JSON.parse(dataRequest.responseText);
-                
+                window.location.href = 'index.html';
                 
           } else {
             alert('There was a problem with the request.');

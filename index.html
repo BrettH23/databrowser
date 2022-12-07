@@ -2,13 +2,12 @@
 <html>
     <head>
         <title>
-            Data Browser
+            ROR2 Data Browser
         </title>
         <meta charset="UTF-8">
         
         <link rel="stylesheet" href="style.css">
-        <script src="js/dataLoader.js"></script>
-        <script src="js/editor.js"></script>
+        
     </head>
     <body>
         <header>
@@ -16,88 +15,18 @@
                 <h1>
                     Risk of Rain 2 Items
                 </h1>
-            
-        </header>
-        
-        <button id="editButton" onclick="swapEdit()"> Editor</button>
-        <button id="deleteButton" onclick="deleteItem()" hidden> Delete</button>
-        
-        <iframe name="dummyframe" id="dummyframe" hidden></iframe>
-        
-        <form action="php/updateItem.php" method="post" enctype="multipart/form-data">
-            <div id="grad">
-                    <img src="" id="image" height="200px" width="200px"><br>
-                    <input id="image-input" id="fileup" name="fileup" type="file" style="position:absolute;" hidden>     
-            </div>
-            <section id="big">
-                <ul>
-                    <li>
-                        <p id="name-text">Item Name</p>
-                        <p id="name-input" hidden><label for="name">Name:</label><input type="text" name="name" autocomplete="off"></td></p>
-                    </li>
-                    <li>
-                        <p id="rarity-text">Item Rarity</p>
-                        <p id="rarity-input" hidden><label for="rarity">Rarity:</label><input type="text" name="rarity" autocomplete="off"></td></p>
-                    </li>
-                    <li>
-                        <p id="category-text">Item Category</p>
-                        <p id="category-input" hidden><label for="category">Category:</label><input type="text" name="category" autocomplete="off"></td></p>
-                    </li>
-                    <li>
-                        <p id="requires-unlock-text"></p>
-                        <p id="requires-unlock-input" hidden><label for="requires_unlock">Requires Unlock?:</label><input type="checkbox" name="requires_unlock" value="true" autocomplete="off"></td></p>
-                    </li>
-                    <li id="2statChecker" hidden>
-                        <p id="has-two-stats"><label for="has_two_stats">Has two Stats?:</label><input type="checkbox" name="has_two_stats" value="true" autocomplete="off"></td></p>
-                    </li>
-                    <li>
-                        <p id="stat1-text">Applies $x $% $stat stacking $ratetype at a rate of $y</p>
-                        <p id="stat1-input" hidden>Applies <input type="text" name="base1" autocomplete="off">
-                            <input type="text" name="unit1" autocomplete="off"> 
-                            <input type="text" name="stat1" autocomplete="off"> with 
-                            <input type="text" name="stack_type1" autocomplete="off"> stacking at a rate of 
-                            <input type="text" name="stack_rate1" autocomplete="off">
-                        </p>
-                    </li>
-                    <li id="second-stat">
-                        <p id="stat2-text">Applies $x $% $stat stacking $ratetype at a rate of $y</p>
-                        <p id="stat2-input" hidden>Applies <input type="text" name="base2" autocomplete="off">
-                            <input type="text" name="unit2" autocomplete="off"> 
-                            <input type="text" name="stat2" autocomplete="off"> with 
-                            <input type="text" name="stack_type2" autocomplete="off"> stacking at a rate of 
-                            <input type="text" name="stack_rate2" autocomplete="off">
-                        </p>
-                    </li>
-                </ul>
-                <input type="hidden" id="position" name="position" value="1">
-                <input type="hidden" id="mode" name="mode" value="edit">
-                <input type="submit">
-            </section>
-        </form>
-        
-        
-
-
-        <section id = "small">
-            
-            
-            
-            <div id="centerme">
-                <button onclick="page(-1)">&lt-</button>
-                <button onclick="page(1)">-&gt</button><br>
-            </div>
-                
-                
-                
-            
-        </section>
-        
-        
-        <footer>
-            Name<br>
-            Address<br>
-        </footer>
-       
+                <p onclick="location.href='browser.html'" class="center">
+                    Browse Data
+                </p>
+                <p onclick="location.href='browser.html?new=true'" class="center">
+                    New Entry
+                </p>
+                <p onclick="location.href='php/saveDB.php'" class="center">
+                    Save Database
+                </p>
+                <p onclick="location.href='php/buildDB.php'" class="center">
+                    Build Database
+                </p>
         
                       
     </body>

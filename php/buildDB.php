@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost"; // default server name
-$username = "admin02"; // user name that you created
-$password = "x2g)OUQiY7uu!x3-"; // password that you created
-$dbname = "ROR2_Items";
+include 'config.php';
 
 
 // Create connection
@@ -69,7 +66,7 @@ $conn->close();
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$dataJson = file_get_contents('../data/data2.json');
+$dataJson = file_get_contents('../data/data.json');
 
 $dataArr = json_decode($dataJson,true);
 
@@ -124,4 +121,5 @@ $stmt->close();
 
 // close the connection
 $conn->close();
+include_once 'sort.php';
 ?>

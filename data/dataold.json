@@ -1,0 +1,118 @@
+[
+    {
+        "name":"Bustling Fungus",
+        "rarity":"Common",
+        "category":"Healing",
+        "requires_unlock":"False",
+        "image":"images/common/Bustling_Fungus.png",
+        "base":[
+            {
+                "type":"Health per second",
+                "value":"4.5",
+                "unit":"%"
+            },
+            {
+                "type":"Radius",
+                "value":"3",
+                "unit":"m"
+            }
+        ],
+        "stacking":[
+            {
+                "type":"Linear",
+                "value":"2.25",
+                "unit":"%"
+            },
+            {
+                "type":"Linear",
+                "value":"3",
+                "unit":"m"
+            }
+        ]
+    },
+    {
+        "name":"Old Guillotine",
+        "rarity":"Uncommon",
+        "category":"Damage",
+        "requires_unlock":"True",
+        "image":"images/uncommon/Old_Guillotine.png",
+        "base":[
+            {
+                "type":"Threshold",
+                "value":"13",
+                "unit":"%"
+            }
+        ],
+        "stacking":[
+            {
+                "type":"Hyperbolic",
+                "value":"13",
+                "unit":"%"
+            }
+        ]
+    },
+    {
+        "name":"Hardlight Afterburner",
+        "rarity":"Legendary",
+        "category":"Utility",
+        "requires_unlock":"False",
+        "image":"images/legendary/Hardlight_Afterburner.png",
+        "base":[
+            {
+                "type":"Charges",
+                "value":"2",
+                "unit":""
+            }
+        ],
+        "stacking":[
+            {
+                "type":"Linear",
+                "value":"2",
+                "unit":""
+            }
+        ]
+    },
+    {
+        "name":"Benthic Bloom",
+        "rarity":"Void",
+        "category":"Utility",
+        "requires_unlock":"False",
+        "image":"images/void/Benthic_Bloom.png",
+        "base":[
+            {
+                "type":"Items Upgraded",
+                "value":"3",
+                "unit":""
+            }
+        ],
+        "stacking":[
+            {
+                "type":"Linear",
+                "value":"3",
+                "unit":""
+            }
+        ]
+    },
+    {
+        "name":"Gesture of the Drowned",
+        "rarity":"Lunar",
+        "category":"Utility",
+        "requires_unlock":"True",
+        "image":"images/lunar/Gesture_of_the_Drowned.png",
+        "base":[
+            {
+                "type":"Cooldown Reduction",
+                "value":"50",
+                "unit":"%"
+            }
+        ],
+        "stacking":[
+            {
+                "type":"Exponential",
+                "value":"15",
+                "unit":"%"
+            }
+        ]
+    }
+
+]

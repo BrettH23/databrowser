@@ -31,16 +31,23 @@ button{
     font-size: 20px;
     padding: 50px;
 }
-#small{
-    height: 25vh;
-}
+
 #grad{
     width: auto;
     height: auto;
     float: right;
     padding: 50px;
 }
-#centerme{
+.center{
     text-align: center;
     margin: auto;
+}
+p{
+    border: 5px solid #000;
+    width: 40%;
+    
+    background-color: rgba(105,105,105,0.7);
+}
+p[onclick]:hover{
+    background-color: rgba(100, 200, 100 ,0.5);
 }

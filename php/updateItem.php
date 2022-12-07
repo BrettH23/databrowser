@@ -121,10 +121,10 @@ if(isset($_POST['has_two_stats'])){
 //echo $accept;
 //echo json_encode($item);
 if($accept){     
-    $servername = "localhost"; // default server name
-    $username = "admin02"; // user name that you created
-    $password = "x2g)OUQiY7uu!x3-"; // password that you created
-    $dbname = "ROR2_Items";
+    
+    include_once 'config.php';
+
+
     $conn = new mysqli($servername, $username, $password, $dbname);
     $stmt;
     $itemToInsert = json_decode(json_encode($item), true);
@@ -246,7 +246,7 @@ if($accept){
 
 
     
-    
+    $conn->close();
     
     //echo json_encode($value);
 
@@ -254,8 +254,24 @@ if($accept){
 }else{
     echo 'Rejected. Not uploaded to database.';
 }
-echo $_POST['mode'];
-echo $_POST['position'];
+//echo $_POST['mode'];
+//echo $_POST['position'];
+include_once 'sort.php';
+
+if($accept){
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $itemToInsert = json_decode(json_encode($item), true);
+    $name=$itemToInsert['name'];
+    $sql = "SELECT pkey FROM items WHERE `name`= '" . $name . "' LIMIT 1";
+
+    $result = $conn->query($sql);
+    
+    $row = $result->fetch_assoc();
+    //echo $row['pkey'];
+    header("location: ../browser.html?pos=" . $row['pkey']);
+}
+
 
 
 //echo json_encode($item);

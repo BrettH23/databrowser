@@ -142,6 +142,8 @@ function setColor(str){
     }
     else if(str == 'Lunar'){
         bg.style.backgroundColor = '#55A';
+    }else{
+        bg.style.backgroundColor = '#777';
     }
 }
 
@@ -164,6 +166,9 @@ window.onload=function(){
         z.click();
         z.setAttribute('hidden','true');
         modeInput.value='new';
+        document.querySelector('#deleteButton').setAttribute('hidden',true);
+        document.querySelector('#cheekyButton').removeAttribute('hidden');
+        document.querySelector('#cheekyText').removeAttribute('hidden');
     }
 
 }
