@@ -27,7 +27,7 @@ function requestItem(i){
                 position = response.pos;
                 //console.log(position);
                 //console.log(response.item);
-                writeToPage(response.item);
+                writeToPage(response.item,response.total);
           } else {
             alert('There was a problem with the request.');
           }
@@ -49,7 +49,7 @@ function requestItem(i){
 
 
 
-function writeToPage(response){
+function writeToPage(response, total){
     
     
     
@@ -122,7 +122,7 @@ function writeToPage(response){
     }
     document.querySelector('#position').value=position;
     setColor(response.rarity);
-    
+    document.querySelector('#current-index').innerHTML = position+'/'+total 
 }
 
 function setColor(str){
@@ -136,6 +136,9 @@ function setColor(str){
     }
     else if(str == 'Legendary'){
         bg.style.backgroundColor = '#A55';
+    }
+    else if(str == 'Boss'){
+        bg.style.backgroundColor = '#AA4';
     }
     else if(str == 'Void'){
         bg.style.backgroundColor = '#A5A';
@@ -162,13 +165,14 @@ window.onload=function(){
         modeInput.value='edit';
     }else{
         let z = document.querySelector('#editButton');
-        console.log(z)
+        //console.log(z)
         z.click();
         z.setAttribute('hidden','true');
         modeInput.value='new';
         document.querySelector('#deleteButton').setAttribute('hidden',true);
         document.querySelector('#cheekyButton').removeAttribute('hidden');
         document.querySelector('#cheekyText').removeAttribute('hidden');
+        document.querySelector('#navButtons').setAttribute('hidden',true);
     }
 
 }

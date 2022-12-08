@@ -13,11 +13,11 @@ $sql = 'ALTER TABLE items DROP pkey;';
 
 $conn->query($sql);
 
-$sql='ALTER TABLE items ADD COLUMN pkey INT NOT NULL;
+$sql="ALTER TABLE items ADD COLUMN pkey INT NOT NULL;
 SET @x = 0;
-UPDATE items SET pkey = (@x:=@x+1) ORDER BY rarity,`name`;
+UPDATE items SET pkey = (@x:=@x+1) ORDER BY FIELD(rarity, 'Void','Lunar','Boss','Legendary','Uncommon','Common') DESC,`name`;
 ALTER TABLE items ADD PRIMARY KEY pkey (pkey);
-ALTER TABLE items CHANGE pkey pkey INT NOT NULL AUTO_INCREMENT;';
+ALTER TABLE items CHANGE pkey pkey INT NOT NULL AUTO_INCREMENT;";
 $conn->multi_query($sql);
 
 //$conn->query('ALTER TABLE items DROP PRIMARY KEY, ADD PRIMARY KEY(name);');

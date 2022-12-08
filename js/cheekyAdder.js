@@ -19,7 +19,12 @@ function cheekyFill(){
     
 
     let cheekyImageUrl = mainBody.firstChild.nextSibling.querySelector('img').getAttribute('src');
-
+    //console.log(cheekyImageUrl);
+    let cheekyDataSrc = mainBody.firstChild.nextSibling.querySelector('img').getAttribute('data-src');
+    if(cheekyDataSrc !=null){
+        cheekyImageUrl = cheekyDataSrc;
+    }
+    //console.log(cheekyImageUrl);
     let imagePieces = cheekyImageUrl.split('/')
     let imageUrl2 = imagePieces[0];
     for(let i = 1;i<imagePieces.length-2;i++){
@@ -49,9 +54,7 @@ function cheekyFill(){
     //console.log(unlockCheck);
     
 
-    document.querySelector("[name='name']").value = cheekyItemName;
-    document.querySelector("[name='rarity']").value = cheekyRarity;
-    document.querySelector("[name='category']").value = cheekyCategory;
+    
 
 
     let statRow1 = {
@@ -70,12 +73,48 @@ function cheekyFill(){
     //console.log(cheekyImageUrl);
     //console.log(statRow2);
     
+    let twoStatCheck = true;
+    if(statRow1[1] == 'Stat'){
+        twoStatCheck = false;
+    }
+    
+    
+    
+    document.querySelector("[name='name']").value = cheekyItemName;
+    document.querySelector("[name='rarity']").value = cheekyRarity;
+    document.querySelector("[name='category']").value = cheekyCategory;
+    
+    document.querySelector("[name='requires_unlock']").checked = unlockCheck;
     
     
     
     
+    document.querySelector("[name='has_two_stats']").checked = twoStatCheck;
     
-    
+
+    if(twoStatCheck){
+        document.querySelector("[name='base1']").value = parseFloat(statRow1[2]);
+        document.querySelector("[name='unit1']").value = statRow1[2].charAt(statRow1[2].length-1);
+        document.querySelector("[name='stat1']").value = statRow1[1];
+        document.querySelector("[name='stack_type1']").value = statRow1[3];
+        document.querySelector("[name='stack_rate1']").value = parseFloat(statRow1[4]);
+
+        document.querySelector("[name='base2']").value = parseFloat(statRow2[2]);
+        document.querySelector("[name='unit2']").value = statRow2[2].charAt(statRow2[2].length-1);
+        document.querySelector("[name='stat2']").value = statRow2[1];
+        document.querySelector("[name='stack_type2']").value = statRow2[3];
+        document.querySelector("[name='stack_rate2']").value = parseFloat(statRow2[4]);
+
+    }
+    else{
+        document.querySelector("[name='base1']").value = parseFloat(statRow2[2]);
+        document.querySelector("[name='unit1']").value = statRow2[2].charAt(statRow2[2].length-1);
+        document.querySelector("[name='stat1']").value = statRow2[1];
+        document.querySelector("[name='stack_type1']").value = statRow2[3];
+        document.querySelector("[name='stack_rate1']").value = parseFloat(statRow2[4]);
+
+
+    }
     
     
     

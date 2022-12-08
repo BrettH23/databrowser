@@ -60,7 +60,7 @@ $result = $conn->query($sql);
         $selected_item->setStackType($row['stack_type2'],1);
         $selected_item->setStackRate($row['stack_rate2'],1);
 
-        $response = ['pos'=>$index,'item'=>$selected_item];
+        $response = ['pos'=>$index,'item'=>$selected_item, 'total'=>$total];
 
 
 

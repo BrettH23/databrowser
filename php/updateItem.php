@@ -258,19 +258,9 @@ if($accept){
 //echo $_POST['position'];
 include_once 'sort.php';
 
-if($accept){
-    
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $itemToInsert = json_decode(json_encode($item), true);
-    $name=$itemToInsert['name'];
-    $sql = "SELECT pkey FROM items WHERE `name`= '" . $name . "' LIMIT 1";
 
-    $result = $conn->query($sql);
-    
-    $row = $result->fetch_assoc();
-    //echo $row['pkey'];
-    header("location: ../browser.html?pos=" . $row['pkey']);
-}
+header("location: ../index.html");
+
 
 
 

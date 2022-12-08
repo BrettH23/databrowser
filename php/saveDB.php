@@ -17,7 +17,8 @@ for($i = 0;$i<$total;$i++){
     $fetched = fetchItem($i);
     $arr[$i] =$fetched['item'];
 }
-echo json_encode($arr);
+//echo json_encode($arr);
 $file = fopen("../data/data.json", "w") or die("Unable to open file!");
 fwrite($file, json_encode($arr));
+echo 'Database Saved.';
 ?>

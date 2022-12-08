@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         
         <link rel="stylesheet" href="style.css">
+        
         <script src="js/dataLoader.js"></script>
         <script src="js/editor.js"></script>
         <script src="js/cheekyAdder.js"></script>
@@ -19,19 +20,14 @@
                 </h1>
             
         </header>
-        <button onclick="location.href='index.html'">Menu</button>
-        <button id="editButton" onclick="swapEdit()"> Editor</button>
-        <button id="deleteButton" onclick="deleteItem()" hidden> Delete</button>
-        <textarea id="cheekyText" hidden></textarea>
-        <button id="cheekyButton" onclick="cheekyFill()" hidden> Clone</button>
         
-        <iframe name="dummyframe" id="dummyframe" hidden></iframe>
         
         <form action="php/updateItem.php" method="post" enctype="multipart/form-data">
             <div id="grad">
                     <img src="" id="image" height="200px" width="200px"><br>
-                    <input id="image-input" id="fileup" name="fileup" type="file" style="position:absolute;" hidden>     
-            </div>
+                    <input id="image-input" id="fileup" name="fileup" type="file" style="position:absolute;" hidden>
+                    
+            </div>   
             <section id="big">
                 <ul>
                     <li>
@@ -74,25 +70,30 @@
                 </ul>
                 <input type="hidden" id="position" name="position" value="1">
                 <input type="hidden" id="mode" name="mode" value="edit">
-                <input type="submit" id="submitQuery" hidden>
+                <input type="submit" id="submitQuery" value="Submit" hidden style="position: fixed; bottom: 5%; left: 5%;z-index: 1;">  
             </section>
         </form>
         
 
-        <section class="center">
-            <button onclick="requestItem(1)">First</button>
-            <button onclick="page(-1)">&lt-</button>
-            <button onclick="page(1)">-&gt</button>
-            <button onclick="requestItem(-1)">Last</button>
+        <section id="pageButtons">
+            <section id="navButtons">
+                <section id="current-index"></section>
+                <button onclick="requestItem(1)">First</button>
+                <button onclick="page(-1)">&lt-</button>
+                <button onclick="page(1)">-&gt</button>
+                <button onclick="requestItem(-1)">Last</button>
+            </section>
+
+            <button onclick="location.href='index.html'">Menu</button>
+            <button onclick="location.href='find.html'">Index</button>
+            <button id="editButton" onclick="swapEdit()"> Editor</button>
+            <button id="deleteButton" onclick="deleteItem()" hidden> Delete</button>
+            <textarea id="cheekyText" hidden></textarea>
+            <button id="cheekyButton" onclick="cheekyFill()" hidden> Clone</button>
         </section>
     
         
         
-        <footer>
-            Name<br>
-            Address<br>
-        </footer>
-       
         
                       
     </body>

@@ -7,28 +7,16 @@ body{
     font-family: Bombadier,sans-serif;
 }
 header{
-    height: 50px;
-    font-size: 40px;
+    height: auto;
+    font-size: 300%;
     text-align: center;
     margin: 0%;
 }
-footer{
-    position: absolute;
-    text-align: center;
-    bottom: 0px;
-    padding: 0px;
-}
-td{
-    padding: 5px;
-}
-button{
-    padding: 20px;
-    margin: 10px;
-}
+
 
 #big{
-    height: 50vh;
-    font-size: 20px;
+    height: 100%;
+    font-size: 135%;
     padding: 50px;
 }
 
@@ -50,4 +38,22 @@ p{
 }
 p[onclick]:hover{
     background-color: rgba(100, 200, 100 ,0.5);
+}
+#pageButtons{
+    
+    text-align: center;
+    position:fixed;
+    width: 100%;
+    bottom: 0;
+}
+button{
+    background-color: rgba(105,105,105,0.7);
+    border: 5px solid #000;
+    font-family: Bombadier,sans-serif;
+    font-size: 120%;
+    padding: 1%;
+    margin: 0.3%;
+}
+button:hover{
+    background-color: rgba(100, 200, 100 ,0.9);
 }

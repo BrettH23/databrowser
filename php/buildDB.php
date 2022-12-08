@@ -64,6 +64,9 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 // Create connection
+
+if(true){//populateDB
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $dataJson = file_get_contents('../data/data.json');
@@ -121,5 +124,10 @@ $stmt->close();
 
 // close the connection
 $conn->close();
+
+}
+
+
+
 include_once 'sort.php';
 ?>
